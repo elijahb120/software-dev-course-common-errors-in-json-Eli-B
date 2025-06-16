@@ -69,6 +69,39 @@ const invalidBookingJSON = `
 }
 `;
 
+/* Fixes made
+1. Removed const variable are replaced it with a key in the main object
+2. Removed backtick encasing the whole object
+3. Added "" to name key in first guest object 
+4. Replaced undefined with null
+5. Removed extra comma at the end of the amenities array
+6. removed ; from end of JSON object
+*/
+//Fixed JSON
+{
+  "booking": "Valid JSON"
+  "hotelName": "Grand City Hotel",
+  "checkInDate": "2024-05-15",
+  "checkOutDate": "2024-05-20",
+  "guests": [
+    {
+      "name": "Alice Johnson",
+      "age": 30,
+      "email": "alice.johnson@example.com"
+    },
+    {
+      "name": "Bob Smith",
+      "age": null,
+      "email": "bob.smith@example"
+    }
+  ],
+  "roomDetails": {
+    "type": "Suite",
+    "pricePerNight": 200,
+    "amenities": ["WiFi", "Breakfast", "Parking"]
+  }
+}
+
 
 // ============================================
 // ✅ Requirements
@@ -92,10 +125,16 @@ const invalidBookingJSON = `
 
 1️⃣ What tools or techniques did you use to identify the errors?
 
+  The main tools I used for this practice were using online validators such as JSONlint and also using the built in features in VS Code to identify errors
+
 2️⃣ How did you confirm that your corrected JSON file was valid?
 
-3️⃣ Which errors were the most difficult to spot? Why?
+  After I did my initial fixes to errors that I saw in the JSON right away, I placed my code into JSONlint, an online validator, and fixed any remaining syntax errors that it showed me  
 
+3️⃣ Which errors were the most difficult to spot? Why?
+  The extra comma at the end of the array took me a minute to spot because it was at teh very end and commas are such small characters that I looked past it once or twice before seeing the issue.
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
    (e.g., syntax highlighting, linters, writing JSON by example)
+
+   Test and validate your code often to finde problems before they appear and to catch you from making the same mistake over and over again in your code.
 */
